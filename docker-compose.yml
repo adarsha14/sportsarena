@@ -46,7 +46,7 @@ services:
   eureka-server:
     container_name: eureka-server
     build: eureka-server/
-    image: glawstraining/sports_arena:product-webapp
+    image: glawstraining/sports_arena:eureka-server
     hostname: 3.7.2.2
     # depends_on:
       # - config-server
@@ -57,7 +57,7 @@ services:
 
   api-gateway:
     build: api-gateway/
-    image: glawstraining/sports_arena:product-webapp
+    image: glawstraining/sports_arena:api-gateway
     container_name: api-gateway
     restart: always
     hostname: 3.7.2.2
@@ -72,7 +72,7 @@ services:
   payment:
     container_name: payment
     build: payment/
-    image: glawstraining/sports_arena:product-webapp
+    image: glawstraining/sports_arena:payment
     hostname: 3.7.2.2
     depends_on:
       - eureka-server
@@ -85,7 +85,7 @@ services:
   bookings-management:
     container_name: bookings-management
     build: bookings-management/
-    image: glawstraining/sports_arena:product-webapp
+    image: glawstraining/sports_arena:bookings-management
     hostname: 3.7.2.2
     ports:
       - 8087:8087
@@ -101,7 +101,7 @@ services:
   authentication-service:
     container_name: authentication-service
     build: authentication-service/
-    image: glawstraining/sports_arena:product-webapp
+    image: glawstraining/sports_arena:authentication-service
     hostname: 3.7.2.2
     ports:
       - 8095:8095
@@ -118,7 +118,7 @@ services:
   chat-service:
     container_name: chat-service
     build: chat-service/
-    image: glawstraining/sports_arena:product-webapp
+    image: glawstraining/sports_arena:chat-service
     hostname: 3.7.2.2
     ports:
       - 8086:8086
@@ -131,7 +131,7 @@ services:
   email-service:
     container_name: email-service
     build: email-service/
-    image: glawstraining/sports_arena:product-webapp
+    image: glawstraining/sports_arena:email-service
     hostname: 3.7.2.2
     ports:
       - 8085:8085
@@ -146,7 +146,7 @@ services:
   team-up:
     container_name: team-up
     build: team-up/
-    image: glawstraining/sports_arena:product-webapp
+    image: glawstraining/sports_arena:team-up
     hostname: 3.7.2.2
     ports:
       - 8082:8082
@@ -162,7 +162,7 @@ services:
   user-service:
     container_name: user-service
     build: user-service/
-    image: glawstraining/sports_arena:product-webapp
+    image: glawstraining/sports_arena:user-service
     hostname: 3.7.2.2
     ports:
       - 8081:8081
