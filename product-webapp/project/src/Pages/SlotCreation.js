@@ -67,7 +67,7 @@ function SlotCreation() {
 
         console.log("final Values", formValues);
         axios.
-            post(`http://13.57.146.21:8080/booking-Management/api/v1/newslot`,
+            post(`http://54.176.95.76:8080/booking-Management/api/v1/newslot`,
                 { groundID: sessionStorage.getItem("groundID"),startTime: formValues.startTime,endTime: formValues.endTime,status: formValues.status,slotDate: formValues.slotDate })
             .then((response) => {
                 console.log(response);

@@ -30,7 +30,7 @@ import axios from "axios";
 //     })
 // }
 export function postData(type, formValues,callback,  errorcallback){
-    axios.post(`http://13.57.146.21:8080/user/api/v1/${type}`,formValues)
+    axios.post(`http://54.176.95.76:8080/user/api/v1/${type}`,formValues)
     .then(res => {
       //do something
       if(callback != null){

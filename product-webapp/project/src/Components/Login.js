@@ -47,7 +47,7 @@ function Login ({setEmail}) {
             if (formValues.role === "players") {
               
                 axios
-                    .get("http://13.57.146.21:3000/players/2")
+                    .get("http://54.176.95.76:3000/players/2")
                     .then((response) => {
                         // console.log(response.data);
 
@@ -61,7 +61,7 @@ function Login ({setEmail}) {
                     .then(() => { });
             } else if(formValues.role === "vendors") {
                 axios
-                .get("http://13.57.146.21:3000/vendors/1")
+                .get("http://54.176.95.76:3000/vendors/1")
                 .then((response) => {
                     // console.log(response.data);
                    let values= response.data;
@@ -110,7 +110,7 @@ function Login ({setEmail}) {
             sessionStorage.setItem("role",formValues.role)
              setEmail(formValues.userEmail)
             if(formValues.role==="newground"){
-                axios.get(`http://13.57.146.21:8080/user/api/v1/ground/ownerEmail/`+formValues.userEmail)
+                axios.get(`http://54.176.95.76:8080/user/api/v1/ground/ownerEmail/`+formValues.userEmail)
                 .then((res)=>{
                     sessionStorage.setItem("groundID",res.data.groundID)
                 })
